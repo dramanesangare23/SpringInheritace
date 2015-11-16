@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+<!-- We use the following bean as a template for others -->
+	<bean id="beanTemplate" abstract="true">
+		<property name="message1" value="Hello World!" />
+		<property name="message2" value="Hello second World!" />
+	</bean>
+
+ 	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld"	parent="beanTemplate" />
+<!--  		<property name="message1" value="Hello world!" />
+		<property name="message2" value="Hello second World" /> 
+ 	</bean> -->
+
+ 	<bean id="helloMali" class="com.tutorialspoint.HelloMali" parent="beanTemplate">
+		<property name="message1" value="Hello Mali!" />
+		<property name="message3" value="Awni sôgôma Mali denw!" />
+	</bean> 
+
+</beans>
